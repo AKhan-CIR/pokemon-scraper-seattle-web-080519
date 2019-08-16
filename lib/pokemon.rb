@@ -1,5 +1,5 @@
 class Pokemon
-  attr_reader :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :db
   
   def initialize(input={})
     @id = input[:id]
@@ -10,7 +10,7 @@ class Pokemon
     
     def self.save(id, name, type, db)
       sql = "INSERT INTO pokemon VALUES(?,?,?)"
-      :db.execute(sql, :id, :name, :type)
+      db.execute(sql, [:id], [:name], [:type])
     end
       
   end
