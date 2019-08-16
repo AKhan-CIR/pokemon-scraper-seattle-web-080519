@@ -5,7 +5,7 @@ class Pokemon
     @id = input[:id]
     @name = input[:name]
     @type = input[:type]
-    @db =  input[:db]
+    @db =  db
     end
     
     def self.save(id, name, type)
