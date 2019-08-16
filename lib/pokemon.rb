@@ -8,8 +8,8 @@ class Pokemon
     @db =  input[:db]
     end
     
-    def self.save(name, type, db)
-      sql = "INSERT INTO pokemon VALUES(?,?)"
+    def self.save(id, name, type, db)
+      sql = "INSERT INTO pokemon VALUES(?,?,?)"
       db.execute(sql, :id, :name, :type)
     end
       
