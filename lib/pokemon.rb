@@ -5,10 +5,10 @@ class Pokemon
     @id = input[:id]
     @name = input[:name]
     @type = input[:type]
-    @db =  db
+    @db =  input[:db]
     end
     
-    def self.save(id, name, type)
+    def self.save(id, name, type, db)
       sql = "INSERT INTO pokemon VALUES(?,?,?)"
       db[:conn].execute(sql, :id, :name, :type)
     end
